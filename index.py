@@ -24,9 +24,9 @@ class Car:
 
 
     def move(self):
-        self.x += self.speed_x
-        self.y += self.speed_y
-        self.z += self.speed_z
+        self.x += self.speed_x*time_final[0]
+        self.y += self.speed_y*time_final[0]
+        self.z += self.speed_z*time_final[0]
    
     flag=0
     def detect_collision(self, car2):
@@ -176,12 +176,13 @@ class Car:
 
     
 # create two Car objects
-car1 = Car("Hyundai", "Creta", 2022, 1,2,3,0,0 ,0)
-car2 = Car("Maruti", "Alto", 2021, 1,2,3,2,4,6)
+car1 = Car("Hyundai", "Creta", 2022, 50,0,0,-100,0 ,0)
+car2 = Car("Maruti", "Alto", 2021, 25,0,0,0,0,0)
 
 # accelerate and decelarate car1 and car2
 car1.accelerate(0,0,0)
 car2.accelerate(0,0,0)
+
 
 
 print("2 cars detected:")
@@ -196,3 +197,7 @@ else:
     print("No collision detected.")
     print("The cars will never collide.")
     print("Lucky!!")
+
+#if want to move the car
+car1.move()
+car2.move()
